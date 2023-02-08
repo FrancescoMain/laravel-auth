@@ -4,13 +4,12 @@
     
     <h1>CONTENT</h1>
     <div class="card-body">
-        @if (session('status'))
-        <div class="alert alert-success" role="alert">
-        {{ session('status') }}
-        {{ __('You are logged in!') }}
-
-        </div>
-        @endif
+        <h1>Homepage</h1>
+        @guest
+        <h2>non loggato</h2>
+        @else
+        <h2>loggato</h2>
+        @endguest
 
     </div>
 @endsection
