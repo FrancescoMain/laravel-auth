@@ -39,6 +39,9 @@ Route :: middleware(['auth', 'verified'])
         Route :: post('/project/store', [MainController :: class, 'projectStore'])
                 -> name('project.store');
 
+        //update
+        Route :: get('/project/edit/{project}', [MainController :: class, 'projectEdit'])
+                -> name('project.edit');
    });
 
 
