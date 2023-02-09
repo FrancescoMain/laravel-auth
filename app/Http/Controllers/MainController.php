@@ -22,4 +22,13 @@ class MainController extends Controller
 
     }
 
+    //
+    public function projectDelete(Project $project){
+
+        $project -> delete();
+
+        return redirect() -> route('home');
+
+    }
+
 }
