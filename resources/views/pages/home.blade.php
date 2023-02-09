@@ -18,6 +18,9 @@
             @guest
             @else
                 <a href="{{ route('admin.project.delete', $project) }}">X</a>
+                <a href="{{ route('admin.project.edit', $project) }}">
+                    EDIT
+                </a>
             @endguest
 
             @endforeach
