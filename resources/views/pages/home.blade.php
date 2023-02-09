@@ -11,13 +11,14 @@
             <a href="{{ route('project.show', $project) }}">
                 <li>{{ $project -> name }}</li>
             </a>
-                
+            @guest
+            @else
+                <a href="{{ route('admin.project.delete', $project) }}">X</a>
+            @endguest
+
             @endforeach
         </ul>
-        @guest
-        @else
-        <h2>loggato</h2>
-        @endguest
+
 
     </div>
 @endsection
