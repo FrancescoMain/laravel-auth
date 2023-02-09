@@ -4,9 +4,15 @@
     
     <h1>CONTENT</h1>
     <div class="card-body">
-        <h1>Homepage</h1>
+        <h1>I miei progetti</h1>
+        <ul>
+            @foreach ($projects as $project)
+
+                <li>{{$project -> name}}</li>
+                
+            @endforeach
+        </ul>
         @guest
-        <h2>non loggato</h2>
         @else
         <h2>loggato</h2>
         @endguest
