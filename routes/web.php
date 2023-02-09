@@ -24,14 +24,18 @@ Route :: get('/project/show/{project}', [MainController :: class, 'projectShow']
 
 
 //private
-Route::middleware(['auth', 'verified'])
+Route :: middleware(['auth', 'verified'])
    ->name('admin.')
    ->prefix('ad')
    ->group(function () {
 
         //delete 
-        Route::get('/project/delete,{project}', [MainController :: class, 'projectDelete'])
+        Route :: get('/project/delete,{project}', [MainController :: class, 'projectDelete'])
          ->name('project.delete');
+        
+        //create && store
+        Route :: get('/project/create', [MainController :: class, 'projectCreate'])
+         ->name('project.create'); 
 
    });
 
