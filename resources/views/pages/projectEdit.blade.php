@@ -3,7 +3,7 @@
 @section('content')
     
     <h1>New project</h1>
-    <form method="POST" action="{{ route('project.update', $project) }}">
+    <form method="POST" action="{{ route('admin.project.update', $project) }}">
         @csrf
         <label for="name">Name</label>
         <input type="text" name="name" value={{ $project -> name }}>
