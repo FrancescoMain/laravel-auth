@@ -15,11 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //index
-Route :: get('/', [MainController :: class, 'home']);
+Route :: get('/', [MainController :: class, 'home'])
+-> name('home');
 
 //show
 Route :: get('/project/show/{project}', [MainController :: class, 'projectShow'])
         -> name('project.show');
+
 
 //private
 Route::middleware(['auth', 'verified'])
@@ -27,10 +29,10 @@ Route::middleware(['auth', 'verified'])
    ->prefix('ad')
    ->group(function () {
 
-        //delete
-         Route::get('/delete', [MainController :: class, 'projectDelete'])
+        //delete 
+        Route::get('/project/delete,{project}', [MainController :: class, 'projectDelete'])
          ->name('project.delete');
-         
+
    });
 
 
