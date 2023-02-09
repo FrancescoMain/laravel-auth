@@ -21,6 +21,19 @@ Route :: get('/', [MainController :: class, 'home']);
 Route :: get('/project/show/{project}', [MainController :: class, 'projectShow'])
         -> name('project.show');
 
+//private
+Route::middleware(['auth', 'verified'])
+   ->name('admin.')
+   ->prefix('ad')
+   ->group(function () {
+
+        //delete
+         Route::get('/delete', [MainController :: class, 'projectDelete'])
+         ->name('project.delete');
+         
+   });
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
