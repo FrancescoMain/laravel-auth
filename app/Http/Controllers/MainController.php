@@ -58,6 +58,11 @@ class MainController extends Controller
 	$project -> save();
 
 	return redirect() -> route('home');
-}
+    }
 
+    //update
+    public function projectEdit(Project $project) {
+
+	return view('pages.projectEdit', compact('project'));
+    }
 }
