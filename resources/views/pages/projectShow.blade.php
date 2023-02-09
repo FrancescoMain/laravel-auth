@@ -13,10 +13,12 @@
             <span>Relese date: {{$project -> relase_date }}</span>
         </div>
         <a href="{{$project -> repo_link}}">{{$project -> repo_link}}</a>
-        @guest
-        @else
-        <h2>loggato</h2>
-        @endguest
+           @guest
+            @else
+                <div>
+                    <a href="{{ route('admin.project.delete', $project) }}">Delete</a>
+                </div>
+            @endguest
 
     </div>
 @endsection
