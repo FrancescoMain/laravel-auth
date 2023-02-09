@@ -19,10 +19,9 @@ class MainController extends Controller
     public function projectShow(Project $project){
 
         return view('pages.projectShow', compact('project'));
-
     }
 
-    //
+    //DELETE
     public function projectDelete(Project $project){
 
         $project -> delete();
