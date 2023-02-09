@@ -35,7 +35,9 @@ Route :: middleware(['auth', 'verified'])
         
         //create && store
         Route :: get('/project/create', [MainController :: class, 'projectCreate'])
-         ->name('project.create'); 
+                ->name('project.create'); 
+        Route :: post('/project/store', [MainController :: class, 'projectStore'])
+                -> name('project.store');
 
    });
 
