@@ -30,4 +30,10 @@ class MainController extends Controller
 
     }
 
+    //create & store
+    public function projectCreate() {
+
+	return view('pages.projectCreate');
+}
+
 }
