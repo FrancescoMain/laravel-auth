@@ -8,7 +8,9 @@
         <ul>
             @foreach ($projects as $project)
 
-                <li>{{$project -> name}}</li>
+            <a href="{{ route('project.show', $project) }}">
+                <li>{{ $project -> name }}</li>
+            </a>
                 
             @endforeach
         </ul>
