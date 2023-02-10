@@ -2,19 +2,27 @@
 
 @section('content')
     
-    <h1>CONTENT</h1>
     <div class="card-body">
-        <h1>I miei progetti</h1>
+        <h1 class="title">I MIEI PROGETTI</h1>
         @guest
         @else    
-        <a href="{{ route('admin.project.create') }}">CREATE NEW TASK</a>
+        <div class="container">
+            <div class="row">
+                <div class="col justify-content-center d-flex">
+                    <a class="button-29" href="{{ route('admin.project.create') }}">CREATE NEW TASK</a>
+                </div>
+            </div>
+        </div>
         @endguest
-        <ul>
+        <ul class="d-flex">
             @foreach ($projects as $project)
-
             <a href="{{ route('project.show', $project) }}">
-                <li>{{ $project -> name }}</li>
-                <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
+
+                    <li>
+                        {{ $project -> name }}
+                        <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
+                    </li>
+
             </a>
             @guest
             @else
@@ -26,7 +34,5 @@
 
             @endforeach
         </ul>
-
-
     </div>
 @endsection
