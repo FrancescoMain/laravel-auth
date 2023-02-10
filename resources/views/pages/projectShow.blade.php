@@ -6,7 +6,7 @@
     <div class="card-body">
         <h1>{{$project -> name}}</h1>
 
-        <img src="{{$project -> main_image}}" alt="">
+        <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
         <h3>Description</h3>
         <p>{{$project -> description}}</p>
         <div>
