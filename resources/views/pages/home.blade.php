@@ -14,6 +14,7 @@
 
             <a href="{{ route('project.show', $project) }}">
                 <li>{{ $project -> name }}</li>
+                <img src="{{ asset('storage/' . $project -> main_image) }}" alt="">
             </a>
             @guest
             @else
